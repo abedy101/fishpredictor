@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fish Weight Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fish Weight Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="length1">Standard Length:</label>
+            <input type="text" id="length1" name="length1" placeholder="Enter Standard Length" required="required">
+            
+            <label for="length2">Diagonal Length:</label>
+            <input type="text" id="length2" name="length2" placeholder="Enter Diagonal Length" required="required">
+            
+            <label for="length3">Cross Length:</label>
+            <input type="text" id="length3" name="length3" placeholder="Enter Cross Length" required="required">
+            
+            <label for="height">Height:</label>
+            <input type="text" id="height" name="height" placeholder="Enter Height" required="required">
+            
+            <label for="width">Width:</label>
+            <input type="text" id="width" name="width" placeholder="Enter Width" required="required">
+            
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
